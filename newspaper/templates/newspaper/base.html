@@ -1,0 +1,32 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html id = 'baseHTML'>
+
+			<head>
+
+						<title> Daily Statistacks </title>
+						<meta charset="utf-8">
+						<meta http-equiv="X-UA-Compatible" content="IE=edge">
+						<meta name="viewport" content="width=device-width, initial-scale=1">
+						<link rel = "stylesheet" type = "text/css" href = "{% static 'newspaper/assets/css/bootstrap.min.css' %}">
+						<link rel = "stylesheet" type = "text/css" href = "{% static 'newspaper/assets/css/font-awesome.min.css' %}">
+						<link rel = "stylesheet" type = "text/css" href = "{% static 'newspaper/assets/css/animate.css' %}">
+						<link rel = "stylesheet" type = "text/css" href = "{% static 'newspaper/assets/css/font.css' %}">
+						<link rel = "stylesheet" type = "text/css" href = "{% static 'newspaper/assets/css/li-scroller.css' %}">
+						<link rel = "stylesheet" type = "text/css" href = "{% static 'newspaper/assets/css/slick.css' %}">
+						<link rel = "stylesheet" type = "text/css" href = "{% static 'newspaper/assets/css/jquery.fancybox.css' %}">
+						<link rel = "stylesheet" type = "text/css" href = "{% static 'newspaper/assets/css/theme.css' %}">
+						<link rel = "stylesheet" type = "text/css" href = "{% static 'newspaper/assets/css/style.css' %}">
+						<link rel = "stylesheet" type = "text/css" href = "{% static 'newspaper/assets/css/style.css' %}">
+
+			</head>
+
+			<body>
+
+						{% block content %}
+						{% endblock %}
+
+			</body>
+
+</html>

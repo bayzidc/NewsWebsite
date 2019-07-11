@@ -1,0 +1,102 @@
+{% extends "newspaper/base.html" %}
+
+{% block content %}
+{% load static %}
+
+<div id="preloader">
+<div id="status">&nbsp;</div>
+</div>
+<a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+<div class="container">
+<header id="header">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="header_top">
+        <div class="header_top_left">
+          <ul class="top_nav">
+            <li><a href = "/newspaper/">Home</a></li>
+            <li><a href = "/newspaper/updateRedirect/">Update Details</a></li>
+            <li><a href = "/newspaper/logout/">Logout</a></li>
+          </ul>
+        </div>
+        <div class="header_top_right">
+
+          <p><span id="datetime"></span></p>
+
+          <p style = 'color : #d083cf;'> Welcome {{ fName }} </p>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="header_bottom">
+        <div class="logo_area"><a href="/newspaper/" class="logo"><img src="{% static "newspaper/images/testlogo.png" %}" alt="" ></a></div>
+      </div>
+  </div>
+
+</header>
+<section id="navArea">
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav main_nav">
+        <li><a href = "/newspaper/"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
+        <li class="active"><a id = 'lifestyle' href ="/newspaper/lifestyleRedirect/">Lifestyle</a></li>
+        <li><a href = "/newspaper/sportRedirect/">Sport</a></li>
+        <li><a href = "/newspaper/politicsRedirect/">Politics</a></li>
+        <li><a href = "/newspaper/businessfinanceRedirect/">Business & Finance</a></li>
+        <li><a href = "/newspaper/technologyRedirect/">Technology</a></li>
+      </ul>
+    </div>
+  </nav>
+</section>
+<section id="contentSection">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-8">
+      <div class="left_content">
+        <div class="contact_area">
+
+          {% if article_list %}
+
+            {% for article in article_list %}
+
+            <h2><a href = "{% url 'newspaper:detail' article.id %}"> {{ article.headline }}</a></h2><p class = "author"><i>. By {{ article.author }} </i></p>
+            <hr class = "divider">
+
+            {% endfor %}
+
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer id="footer">
+  <div class="footer_bottom">
+    <p class="copyright">Copyright &copy; DailyStatistacks</p>
+  </div>
+</footer>
+</div>
+
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src = "{% static 'newspaper/ajax.js' %}"></script>
+<script src = "{% static 'newspaper/assets/js/jquery.min.js' %}"></script>
+<script src = "{% static 'newspaper/assets/js/wow.min.js' %}"></script>
+<script src = "{% static 'newspaper/assets/js/bootstrap.min.js' %}"></script>
+<script src = "{% static 'newspaper/assets/js/slick.min.js' %}"></script>
+<script src = "{% static 'newspaper/assets/js/jquery.li-scroller.1.0.js' %}"></script>
+<script src = "{% static 'newspaper/assets/js/jquery.newsTicker.min.js' %}"></script>
+<script src = "{% static 'newspaper/assets/js/jquery.fancybox.pack.js' %}"></script>
+<script src = "{% static 'newspaper/assets/js/custom.js' %}"></script>
+
+<script>
+
+    var dt = new Date().toDateString();
+    document.getElementById("datetime").innerHTML = dt;
+
+</script>
+
+{% endblock %}

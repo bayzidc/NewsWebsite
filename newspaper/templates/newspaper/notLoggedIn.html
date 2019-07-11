@@ -1,0 +1,13 @@
+{% extends "newspaper/base.html" %}
+
+{% block content %}
+
+<h1 id = 'heading' style = "color : red" >PERMISSION ERROR : YOU NEED TO BE LOGGED IN TO PERFORM THAT ACTION!</h1>
+
+<input type = "submit" onclick = 'loadIndexPage()' value = "Click here to go back to the index page">
+
+{% load static %}
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src = "{% static 'newspaper/ajax.js' %}"></script>
+
+{% endblock %}

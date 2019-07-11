@@ -1,0 +1,248 @@
+{% extends "newspaper/base.html" %}
+
+{% block content %}
+
+{% load static %}
+
+<div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
+<a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+<div class="container">
+  <header id="header">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="header_top">
+          <div class="header_top_left">
+            <ul class="top_nav">
+              <li><a href="/newspaper/">Home</a></li>
+              <li><a href="/newspaper/registerRedirect/">Sign Up</a></li>
+              <li><a href="/newspaper/loginRedirect/">Login</a></li>
+            </ul>
+          </div>
+          <div class="header_top_right">
+            <p><span id="datetime"></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="header_bottom">
+          <div class="logo_area"><a href="/newspaper/" class="logo"><img src="{% static "newspaper/images/testlogo.png" %}" alt=""></a></div>
+        </div>
+      </div>
+    </div>
+    <style>
+      hr
+      {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #d083cf;
+        margin: 1em 0;
+        margin-top: 5em;
+        margin-bottom: -3em;
+        padding: 0;
+      }
+      textarea
+      {
+        width: 710px;
+        height: 70px;
+        resize: none;
+      }
+
+      #postComment
+      {
+      margin-top: 0em;
+      }
+
+      #spacer
+      {
+      margin-top: 5em;
+      }
+      poster
+      {
+        color: #4c194b;
+        font-weight: bold;
+      }
+      pTime
+      {
+        color: #aaa9aa;
+      }
+      #articleBody
+      {
+        text-align: justify;
+      }
+      h6
+      {
+        text-align: right;
+        display: inline;
+        margin-left: -15px;
+      }
+      #voteDiv
+      {
+        margin-left: 140px;
+        display: inline;
+      }
+      .commentLikes
+      {
+        display: inline-block;
+        margin: 0;
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+      }
+      .col-lg-12
+      {
+        padding-right: 0px;
+        padding-left: 0px;
+      }
+      .col-md-12
+      {
+        padding-right: 0px;
+        padding-left: 0px;
+      }
+      .col-sm-12
+      {
+        padding-right: 0px;
+        padding-left: 0px;
+      }
+    </style>
+  </header>
+  <section id="navArea">
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav main_nav">
+          <li class="active"><a href = "/newspaper/"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
+          <li><a id = 'lifestyle' href = "/newspaper/lifestyleRedirect/">Lifestyle</a></li>
+          <li><a href = "/newspaper/sportRedirect/">Sport</a></li>
+          <li><a href = "/newspaper/politicsRedirect/">Politics</a></li>
+          <li><a href = "/newspaper/businessfinanceRedirect/">Business & Finance</a></li>
+          <li><a href = "/newspaper/technologyRedirect/">Technology</a></li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+  <section id="newsSection">
+  </section>
+  <section id="sliderSection">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-8">
+        <div class="slick_slider">
+          <div class="single_iteam"> <a href="/newspaper/3/"> <img src ="{% static "newspaper/images/bigshaq.jpg" %}" alt=""></a>
+            <div class="slider_article">
+              <h2><a class="slider_tittle" href="/newspaper/3/">Meet Big Shaq, the man behind ‘Man’s Not Hot’, the viral hit of the year</a></h2>
+              <p>"It’s not really a story - it’s a lifestyle.” Big Shaq’s the man of the moment, or at the very least, man of the memes.</p>
+            </div>
+          </div>
+          <div class="single_iteam"> <a href="/newspaper/2/"> <img src ="{% static "newspaper/images/wenger.jpg" %}" alt=""></a>
+            <div class="slider_article">
+              <h2><a class="slider_tittle" href="/newspaper/2/">Wenger says footballers cannot replicate respect shown in sumo wrestling</a></h2>
+              <p>Arsene Wenger does not believe it is realistic to expect footballers to 'commit 200% on the pitch and be an angel after'.</p>
+            </div>
+          </div>
+          <div class="single_iteam"> <a href="/newspaper/9/"> <img src ="{% static "newspaper/images/shazam.jpg" %}" alt=""></a>
+            <div class="slider_article">
+              <h2><a class="slider_tittle" href="/newspaper/9/">Game that tune: Apple snaps up Shazam for reported $400m</a></h2>
+              <p>Apple has bought Shazam, a London-based app that allows smartphone users to identify music, for a reported $400m (£300m).</p>
+            </div>
+          </div>
+          <div class="single_iteam"> <a href="/newspaper/7/"> <img src ="{% static "newspaper/images/nhs.jpg" %}" alt=""></a>
+            <div class="slider_article">
+              <h2><a class="slider_tittle" href="/newspaper/7/">NHS bosses 'bloody stupid' to expect £4bn cash injection</a></h2>
+              <p>The NHS’s leadership was “bloody stupid” to expect an emergency £4bn cash injection in last month’s budget</p>
+            </div>
+          </div>
+          <div class="single_iteam"> <a href="/newspaper/6/"> <img src ="{% static "newspaper/images/climatechange.jpg" %}" alt=""></a>
+            <div class="slider_article">
+              <h2><a class="slider_tittle" href="/newspaper/6/">World Bank to end financial support for oil and gas exploration</a></h2>
+              <p>The World Bank will end its financial support for oil and gas exploration within the next two years in response to the growing threat posed by climate change.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+      <div class="single_sidebar">
+        <h2><span>Recent Comments</span></h2>
+        <ul class="spost_nav">
+
+            {% if commentsList.0 %}
+            <li>
+
+                <poster href = '{{ idList.0 }}' > {{ articleList.0 }} </poster>
+                <br>
+                <div class = "media-body"> <a href = '/newspaper/{{ idList.0 }}/' class="catg_title"> {{ commentsList.0.post }} </a> </div>
+                <pTime> by. {{ commentsList.0.email }} </pTime>
+            </li>
+            {% endif %}
+
+            {% if commentsList.1 %}
+            <li>
+                <poster> {{ articleList.1 }} </poster>
+                <br>
+                <div class = "media-body"> <a href = '/newspaper/{{ idList.1 }}/' class="catg_title"> {{ commentsList.1.post }} </a> </div>
+                <pTime> by. {{ commentsList.1.email }} </pTime>
+            </li>
+            {% endif %}
+
+            {% if commentsList.2 %}
+            <li>
+                <poster> {{ articleList.2 }} </poster>
+                <br>
+                <div class = "media-body"> <a href = '/newspaper/{{ idList.2 }}/' class="catg_title"> {{ commentsList.2.post }} </a> </div>
+                <pTime> by. {{ commentsList.2.email }} </pTime>
+            </li>
+            {% endif %}
+
+            {% if commentsList.3 %}
+            <li>
+                <poster> {{ articleList.3 }} </poster>
+                <br>
+                <div class = "media-body"> <a href = '/newspaper/{{ idList.3 }}/' class="catg_title"> {{ commentsList.3.post }} </a> </div>
+                <pTime> by. {{ commentsList.3.email }} </pTime>
+            </li>
+            {% endif %}
+
+            {% if commentsList.4 %}
+            <li>
+                <poster> {{ articleList.4 }} </poster>
+                <br>
+                <div class = "media-body"> <a href = '/newspaper/{{ idList.4 }}/' class="catg_title"> {{ commentsList.4.post }} </a> </div>
+                <pTime> by. {{ commentsList.4.email }} </pTime>
+            </li>
+            {% endif %}
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id = 'newsDiv'> </div>
+
+  <footer id="footer">
+    <div class="footer_bottom">
+      <p class="copyright">Copyright &copy; DailyStatistaks </p>
+    </div>
+  </footer>
+</div>
+
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src = "{% static 'newspaper/ajax.js' %}"></script>
+<script src = "{% static 'newspaper/images' %}"></script>
+<script src = "{% static 'newspaper/assets/js/jquery.min.js' %}"></script>
+<script src = "{% static 'newspaper/assets/js/wow.min.js' %}"></script>
+<script src = "{% static 'newspaper/assets/js/bootstrap.min.js' %}"></script>
+<script src = "{% static 'newspaper/assets/js/slick.min.js' %}"></script>
+<script src = "{% static 'newspaper/assets/js/jquery.li-scroller.1.0.js' %}"></script>
+<script src = "{% static 'newspaper/assets/js/jquery.newsTicker.min.js' %}"></script>
+<script src = "{% static 'newspaper/assets/js/jquery.fancybox.pack.js' %}"></script>
+<script src = "{% static 'newspaper/assets/js/custom.js' %}"></script>
+<script>
+  var dt = new Date().toDateString();
+  document.getElementById("datetime").innerHTML = dt;
+</script>
+
+{% endblock %}
